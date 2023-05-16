@@ -11,4 +11,4 @@ echo "deb [signed-by=/etc/apt/trusted.gpg.d/msfpgp2022_pub.gpg] https://github.c
 //Update the package lists again by running the following command:
 sudo apt update
 //Install the Metasploit Framework by running the following command:
-sudo apt install metasploit-framework
+sudo snap install metasploit-framework
