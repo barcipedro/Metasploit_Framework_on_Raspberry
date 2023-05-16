@@ -1,0 +1,14 @@
+//Open a terminal on your Raspberry Pi.
+//Update the package lists by running the following command:
+sudo apt update
+//Install the necessary dependencies by running the following command:
+sudo apt install curl gpg
+//Import the Metasploit repository signing key by running the following command:
+curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfpgp2022_pub.asc | gpg --dearmor > msfpgp2022_pub.gpg
+sudo mv msfpgp2022_pub.gpg /etc/apt/trusted.gpg.d/
+//Add the Metasploit repository to the apt sources list by running the following command:
+echo "deb [signed-by=/etc/apt/trusted.gpg.d/msfpgp2022_pub.gpg] https://github.com/rapid7/metasploit-framework.git main" | sudo tee /etc/apt/sources.list.d/metasploit-framework.list
+//Update the package lists again by running the following command:
+sudo apt update
+//Install the Metasploit Framework by running the following command:
+sudo apt install metasploit-framework
